@@ -7,27 +7,37 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="mortalscumbag"
 
+# ulimit bump, dont want to deal with this anymore
+ulimit -n 100000
+
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias work="cd ~/backupify"
-alias bup="cd ~/backupify/backupify"
-alias bdev="cd ~/backupify/backupify_dev"
-alias repo="cd ~/MyRepo"
+alias work="cd ~/Dropbox/CODE/backupify"
+alias bup="cd ~/Dropbox/CODE/backupify/backupify"
+alias bdev="cd ~/Dropbox/CODE/backupify/backupify_dev"
+alias repo="cd ~/Dropbox/CODE/MyRepo"
 alias be="bundle exec"
-alias perm=" cd ~/backupify/permissions_service"
-alias peg="cd ~/backupify/pegasus_service"
+alias perm="cd ~/Dropbox/CODE/backupify/permissions_service"
+alias peg="cd ~/Dropbox/CODE/backupify/pegasus_service"
 alias gobin="export PATH='$PATH:$GOPATH/bin'"
-alias usso="cd ~/backupify/user_sso"
+alias usso="cd ~/Dropbox/CODE/backupify/user_sso"
+alias s-sso="cd ~/Dropbox/CODE/backupify/user_sso && foreman start"
+alias s-perm="cd ~/Dropbox/CODE/backupify/permissions_service && bundle exec rails s"
+alias s-kicker="kicker -r rails -b 'spin push'"
+alias s-spin="spin serve"
+alias s-bup="cd ~/Dropbox/CODE/backupify/backupify && bundle exec rails s"
+alias r-bup="cd ~/Dropbox/CODE/backupify/backupify && bundle exec ./script/reset_all.sh"
 alias gitrecent="git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 # GO Stuff!
-export GOPATH=$HOME/gocode
+export GOPATH=$HOME/Dropbox/CODE/gocode
 # export PATH=$PATH:/usr/local/go/bin
 
 #CASE_SENSITIVE="true"
 export PATH="$PATH:$GOPATH/bin"
 
-# Docker related boot2docker stuff   
+# Docker related boot2docker stuff
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/backupifyadmin/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
@@ -98,3 +108,13 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # added by travis gem
 source /Users/backupifyadmin/.travis/travis.sh
+
+
+export PATH=/Users/backupifyadmin/torch/install/bin:$PATH  # Added automatically by torch-dist
+export LD_LIBRARY_PATH=/Users/backupifyadmin/torch/install/lib:$LD_LIBRARY_PATH  # Added automatically by torch-dist
+export DYLD_LIBRARY_PATH=/Users/backupifyadmin/torch/install/lib:$DYLD_LIBRARY_PATH  # Added automatically by torch-dist
+
+
+export PATH=/Users/backupifyadmin/torch/install/bin:$PATH  # Added automatically by torch-dist
+export LD_LIBRARY_PATH=/Users/backupifyadmin/torch/install/lib:$LD_LIBRARY_PATH  # Added automatically by torch-dist
+export DYLD_LIBRARY_PATH=/Users/backupifyadmin/torch/install/lib:$DYLD_LIBRARY_PATH  # Added automatically by torch-dist
